@@ -6,6 +6,7 @@
 #include <csignal>
 #include <cstring>
 #include <sstream>
+#include "chartoi.hpp"
 
 using namespace std;
 
@@ -37,12 +38,31 @@ int main(int argc, char** argv) {
 				show_help(argv[0]);
 				exit(0);
 			}
-				
-			cout << "numemory: invalid option: " << argv[1] << "\ntry 'numemory --help' for more information";
-			exit(1);
+			else if( strcmp(argv[i], "-q") == 0 ) {
+				QNUM = chartoi(argv[++i]);
+				if(QNUM < 0) {
+				cout << argv[0] << " invalid argument for -q \"" << argv[i] << "\"\n"
+						 << "\ntry 'numemory --help' for more information\n";
+					return 0;
+				}
+			}
+			else if( strcmp(argv[i], "-t") == 0 ) {
+				SEC = chartoi(argv[++i]);
+				if(SEC < 0) {
+					cout << argv[0] << " invalid argument for -t \"" << argv[i] << "\"\n"
+							 << "\ntry 'numemory --help' for more information\n";
+					return 0;
+				}
+			} else {			
+				cout << "numemory: invalid option: " << argv[1] << "\ntry 'numemory --help' for more information\n";
+				exit(1);
+			}
 		}
 	}
 
+	cout << endl << SEC << endl << QNUM;
+	
+	return 0;
 
 	signal(SIGINT, keybint_handler);
 	random_device rd;
