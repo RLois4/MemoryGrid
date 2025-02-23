@@ -14,7 +14,7 @@
 
    ```bash
    git clone https://github.com/RLois4/MemoryGrid.git
-   cd memorygrid
+   cd MemoryGrid
    ```
 
 2. Compile the code:
