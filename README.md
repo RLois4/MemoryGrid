@@ -13,14 +13,14 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/memorygrid.git
+   git clone https://github.com/RLois4/MemoryGrid.git
    cd memorygrid
    ```
 
 2. Compile the code:
 
    ```bash
-   g++ -o memorygrid memorygrid.cpp -lncurses
+   make
    ```
 
 3. Run the program:
