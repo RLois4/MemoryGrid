@@ -60,9 +60,6 @@ int main(int argc, char** argv) {
 		}
 	}
 
-	cout << endl << SEC << endl << QNUM;
-	
-	return 0;
 
 	signal(SIGINT, keybint_handler);
 	random_device rd;
